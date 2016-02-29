@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 550px;
+}
+
+section {
+  width: 500px;
+  margin: 0 auto;
+  header {
+    padding: 5px;
+  }
+  i.fa {
+    font-size: 3em;
+  }
+  h1 {
+    font-size: 3em;
+    margin-left: 10px;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "GitHub Quick View",
+  "description": "This extension gives you a quick view of your GitHub profile and repos",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "GitHub Quick View"
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}

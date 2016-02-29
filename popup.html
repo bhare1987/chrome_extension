@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub Quick View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <section>
+      <header>
+        <i class="fa fa-github"></i>
+        <h1>GitHub Quick View</h1>
+      </header>
+      <section class="promptContainer">
+        <div class='prompt'>
+          <input type='text' name='username' placeholder='Enter GitHub User Name'>
+          <div class='hide'></div>
+        </div>
+      </section>
+      <section class="reposContainer"></section>
+    </section>
+
+    <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="bower_components/underscore/underscore-min.js" charset="utf-8"></script>
+    <script src="bower_components/moment/min/moment.min.js" charset="utf-8"></script>
+    <script src="js/template.js" charset="utf-8"></script>
+    <script src="js/popup.js" charset="utf-8"></script>
+  </body>
+</html>
