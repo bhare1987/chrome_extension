@@ -13,5 +13,8 @@
   "permissions": [
     "activeTab",
     "https://ajax.googleapis.com/"
-  ]
+  ],
+  "sandbox": {
+    "pages": ["templates.html"]
+  }
 }

@@ -26,6 +26,29 @@
     <script src="bower_components/underscore/underscore-min.js" charset="utf-8"></script>
     <script src="bower_components/moment/min/moment.min.js" charset="utf-8"></script>
     <script src="js/template.js" charset="utf-8"></script>
+    <script src="bower_components/handlebars/handlebars.min.js" charset="utf-8"></script>
     <script src="js/popup.js" charset="utf-8"></script>
+    <script id="user" type="text/x-handlebars-template">
+      {{#each ghqv.config.userData }}
+      <div class='userInfo'>
+        <img src='{{ avatar_url }}'>
+        <ul>
+          <li class='username'>{{ login }} </li>
+          <li class='location' {{ location }} </li>
+          <li class='repototal'>{{ public_repos }} </li>
+        </ul>
+      </div>
+      {{/each}}
+    </script>
+    <script id="repos" type="text/x-handlebars-template">
+      {{#each ghqv.config.repoData}}
+      <div class='repoItem'>
+        <a href='{{ repoUrl }}' target='_blank'> {{ repoName }} </a>
+        <span class='repoUpdated'>{{ repoUpdated }}</span>
+        <span class='repoSSH'>{{ repoSSH }}</span>
+        <span class='repoClone'>{{ repoClone }}</span>
+      </div>
+      {{/each}}
+    </script>
   </body>
 </html>

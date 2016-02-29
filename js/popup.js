@@ -23,7 +23,7 @@ var ghqv = {
       ghqv.getUserData();
       ghqv.getRepoData();
       $input.val("").addClass('hide');
-      $div.removeClass('hide').html(ghqv.constructContent(templates.user, ghqv.config.userData));
+      $div.removeClass('hide').html(ghqv.compileTemplate(handlebarTemplates.user(), ghqv.config.userData));
       ghqv.addReposToDom(ghqv.config.reposData, '.reposContainer');
     }
   },
@@ -34,28 +34,29 @@ var ghqv = {
       ghqv.getUserData();
       ghqv.getRepoData();
       $input.addClass('hide');
-      $div.removeClass('hide').html(ghqv.constructContent('user', ghqv.config.userData));
+      $div.removeClass('hide').html(ghqv.compileTemplate(handlebarTemplates.user(), ghqv.config.userData));
       ghqv.addReposToDom(ghqv.config.reposData, '.reposContainer');
     }
   },
-  getTmpl: function(templateName){
-    return templates[templateName];
-  },
-  constructTmpl: function(templateName){
-    var tmpl = ghqv.getTmpl(templateName);
-    var tmplFunc = _.template(tmpl);
-    return tmplFunc;
-  },
-  constructContent: function(templateName, object){
-    var output = ghqv.constructTmpl(templateName);
-    return output(object);
-  },
+  // getTmpl: function(templateName){
+  //   return templates[templateName];
+  // },
+  // constructTmpl: function(templateName){
+  //   var tmpl = ghqv.getTmpl(templateName);
+  //   var tmplFunc = _.template(tmpl);
+  //   return tmplFunc;
+  // },
+  // constructContent: function(templateName, object){
+  //   var output = ghqv.constructTmpl(templateName);
+  //   return output(object);
+  // },
   addReposToDom: function(repos, container) {
-    var repoStr = "";
-    repos.forEach(function(el){
-      repoStr += ghqv.constructContent('repos', el);
-    });
-    $(container).append(repoStr);
+    ghqv.compileTemplate(handlebarTemplates.repos, repos);
+    $(container).append(ghqv.compileTemplate(handlebarTemplates.repos(), repos));
+  },
+  compileTemplate: function(template, data){
+    var template = Handlebars.compile(template);
+    return template(data);
   },
   getUserData: function() {
     var response = $.ajax({
