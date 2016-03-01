@@ -6,7 +6,7 @@ var ghqv = {
   presentation: function(){
     ghqv.getUserData();
     ghqv.getRepoData();
-    setTimeout(ghqv.checkUserName, 500);
+    setTimeout(ghqv.checkUserName, 1000);
   },
   config: {
     urlBase: "https://api.github.com/users",
