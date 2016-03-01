@@ -1,0 +1,20 @@
+.repoItem {
+  display: block;
+  margin: 10px;
+  border-bottom: 1px solid #666;
+  padding-bottom: 5px;
+  word-wrap: break-word;
+  a {
+    display: block;
+    margin-bottom: 5px;
+  }
+  span {
+    display: block;
+    padding-left: 5px;
+    &:before {
+      content: '\f054';
+      font-family: fontawesome;
+      padding-right: 5px;
+    }
+  }
+}

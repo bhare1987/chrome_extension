@@ -23,6 +23,38 @@ section {
     padding: 5px;
     width: 100%;
     margin-bottom: 15px; }
+  .prompt .userInfo {
+    position: relative; }
+    .prompt .userInfo img {
+      display: inline-block;
+      width: 50px; }
+    .prompt .userInfo ul {
+      position: absolute;
+      top: 5px;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      margin-left: 10px; }
+      .prompt .userInfo ul li {
+        font-size: 1em; }
 
 .hide {
   display: none; }
+
+.repoItem {
+  display: block;
+  margin: 10px;
+  border-bottom: 1px solid #666;
+  padding-bottom: 5px;
+  word-wrap: break-word; }
+  .repoItem a {
+    display: block;
+    margin-bottom: 5px; }
+  .repoItem span {
+    display: block;
+    padding-left: 5px; }
+    .repoItem span:before {
+      content: '\f054';
+      font-family: fontawesome;
+      padding-right: 5px; }
